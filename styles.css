@@ -1,0 +1,112 @@
+body {
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calculator {
+  margin: 20vh auto;
+  background-color: black;
+  border: 2px solid white;
+  width: 280px;
+  height: 350px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 0 6px black;
+  transform: scale(1.2);
+}
+
+/* Display to display the input, result from the users  */
+
+#display {
+  width: 100%;
+  background-color: black;
+  height: 75px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: 3px solid white;
+  text-align: right;
+  padding: 25px 10px 2px 2px;
+}
+
+/* Buttons like 1, 2 , = ,+ etc. */
+
+.buttons {
+  font-family: sans-serif;
+  height: 45px;
+  width: 22%;
+  border: 1px solid white;
+  border-radius: 20% 10%;
+  margin-right: 3px;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.buttons:hover {
+  background-color: #7b7878;
+  box-shadow: 0 0 8px darkgray;
+}
+
+/* Button with Value 0 has a bigger width */
+
+.buttons[data-value="0"] {
+  width: 45%;
+  border-radius: 20% 10%;
+  margin-top: 2px;
+  margin-right: 3px;
+}
+
+/* Arithmatic Operators have a separate background color  */
+
+.buttons[data-value="="] {
+  background-color: #ff8100f0;
+}
+
+.buttons:nth-child(4n + 1) {
+  background-color: #ff8100f0;
+}
+
+.buttons:nth-child(4n + 1):hover,
+.buttons[data-value="="]:hover {
+  background-color: #fd9346;
+  box-shadow: 0 0 8px darkgray;
+}
+
+.buttons[data-value="reset"] {
+  background-color: grey;
+}
+
+.buttons[data-value="reset"]:hover {
+  background-color: black;
+}
+
+.buttons[data-value="sign"] {
+  background-color: grey;
+}
+
+.buttons[data-value="sign"]:hover {
+  background-color: black;
+  box-shadow: 0 0 8px white;
+}
+
+.buttons[data-value="%"] {
+  background-color: grey;
+}
+
+.buttons[data-value="%"]:hover {
+  background-color: black;
+  box-shadow: 0 0 8px white;
+}
